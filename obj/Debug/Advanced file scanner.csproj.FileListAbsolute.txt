@@ -1,0 +1,17 @@
+C:\Documents and Settings\Leandray Cz\Local Settings\Data aplikací\Temporary Projects\Advanced file scanner\bin\Debug\Advanced file scanner.exe
+C:\Documents and Settings\Leandray Cz\Local Settings\Data aplikací\Temporary Projects\Advanced file scanner\bin\Debug\Advanced file scanner.pdb
+C:\Documents and Settings\Leandray Cz\Local Settings\Data aplikací\Temporary Projects\Advanced file scanner\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Leandray Cz\Local Settings\Data aplikací\Temporary Projects\Advanced file scanner\obj\Debug\Advanced_file_scanner.Form1.resources
+C:\Documents and Settings\Leandray Cz\Local Settings\Data aplikací\Temporary Projects\Advanced file scanner\obj\Debug\Advanced_file_scanner.Properties.Resources.resources
+C:\Documents and Settings\Leandray Cz\Local Settings\Data aplikací\Temporary Projects\Advanced file scanner\obj\Debug\Advanced file scanner.csproj.GenerateResource.Cache
+C:\Documents and Settings\Leandray Cz\Local Settings\Data aplikací\Temporary Projects\Advanced file scanner\obj\Debug\Advanced file scanner.exe
+C:\Documents and Settings\Leandray Cz\Local Settings\Data aplikací\Temporary Projects\Advanced file scanner\obj\Debug\Advanced file scanner.pdb
+C:\Documents and Settings\Leandray Cz\Dokumenty\Visual Studio 2008\Projects\Advanced file scanner\Advanced file scanner\obj\Debug\Advanced file scanner.exe
+C:\Documents and Settings\Leandray Cz\Dokumenty\Visual Studio 2008\Projects\Advanced file scanner\Advanced file scanner\obj\Debug\Advanced file scanner.pdb
+C:\Documents and Settings\Leandray Cz\Dokumenty\Visual Studio 2008\Projects\Advanced file scanner\Advanced file scanner\bin\Debug\Advanced file scanner.exe
+C:\Documents and Settings\Leandray Cz\Dokumenty\Visual Studio 2008\Projects\Advanced file scanner\Advanced file scanner\bin\Debug\Advanced file scanner.pdb
+C:\Documents and Settings\Leandray Cz\Dokumenty\Visual Studio 2008\Projects\Advanced file scanner\Advanced file scanner\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Leandray Cz\Dokumenty\Visual Studio 2008\Projects\Advanced file scanner\Advanced file scanner\obj\Debug\Advanced_file_scanner.Form1.resources
+C:\Documents and Settings\Leandray Cz\Dokumenty\Visual Studio 2008\Projects\Advanced file scanner\Advanced file scanner\obj\Debug\Advanced_file_scanner.Properties.Resources.resources
+C:\Documents and Settings\Leandray Cz\Dokumenty\Visual Studio 2008\Projects\Advanced file scanner\Advanced file scanner\obj\Debug\Advanced file scanner.csproj.GenerateResource.Cache
+C:\Documents and Settings\Leandray Cz\Dokumenty\Visual Studio 2008\Projects\Advanced file scanner\Advanced file scanner\obj\Debug\Advanced_file_scanner.AboutBox.resources

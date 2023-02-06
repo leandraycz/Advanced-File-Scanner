@@ -1,6 +1,6 @@
 # Advanced-File-Scanner
-OpenSource utility for file scanning
-Advanced File Scanner is opensource computer utility
+OpenSource utility for directory scanning.
+Advanced File Scanner is opensource computer utility.
 
 Release Note:
 1.0 (Beta test version)

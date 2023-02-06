@@ -7,3 +7,5 @@ Release Note:
 -First program released
 -Added files support: .png; .mp4; mp3; .txt
 -Bug Fixes
+
+#Error codes:

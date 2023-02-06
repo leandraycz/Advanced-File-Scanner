@@ -8,4 +8,5 @@ Release Note:
 -Added files support: .png; .mp4; mp3; .txt
 -Bug Fixes
 
-#Error codes:
+Error codes:
+0x0001 - Path to directory was not specified. Text box cannot be blank.

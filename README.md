@@ -1,4 +1,4 @@
-# Advanced-File-Scanner
+# Advanced File Scanner
 OpenSource utility for directory scanning.
 Advanced File Scanner is opensource computer utility.
 

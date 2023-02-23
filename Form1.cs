@@ -28,85 +28,65 @@ namespace Advanced_file_scanner
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            //Initialize Compenents
-            progressBar1.Value = 0;
-            progressBar1.Maximum = 100;
-            listBox2.Items.Clear();
-            listBox1.Items.Clear();
-            listBox1.Items.Add("All Files Count: ");
-            listBox1.Items.Add("All Files Size: ");
-            listBox1.Items.Add("Picture Files Count: ");
-            listBox1.Items.Add("Picture Files Size: ");
-            listBox1.Items.Add("Video Files Count: ");
-            listBox1.Items.Add("Video Files Size: ");
-            listBox1.Items.Add("Music Files Count: ");
-            listBox1.Items.Add("Music Files Size: ");
-            listBox1.Items.Add("Documents Files Count: ");
-            listBox1.Items.Add("Documents Files Size: ");
-            listBox1.Items.Add("Other Files Count: ");
-            listBox1.Items.Add("Other Files Size: ");
-            listBox1.Items.Add("Drive Letter: ");
-            listBox1.Items.Add("Date: ");
-
-            //Declare varibles
-            int AllFilesCount = 0;
-            int AllFilesSize = 0;
+            #region Declaration of variables
+            int AllFilesCount = Directory.GetFiles(textBox1.Text, "*.*", SearchOption.AllDirectories).Length;
+            long AllFilesSize = 0;
             int PictureFilesCount = 0;
-            int PictureFilesSize = 0;
+            long PictureFilesSize = 0;
             int VideoFilesCount = 0;
-            int VideoFilesSize = 0;
+            long VideoFilesSize = 0;
             int MusicFilesCount = 0;
-            int MusicFilesSize = 0;
+            long MusicFilesSize = 0;
             int DocumentsFilesCount = 0;
-            int DocumentsFilesSize = 0;
+            long DocumentsFilesSize = 0;
             int OtherFilesCount = 0;
-            int OtherFilesSize = 0;
+            long OtherFilesSize = 0;
             string DriveLetter = "";
-            string Date = "";
-
-            //Get all files count
-            AllFilesCount = Directory.GetFiles(textBox1.Text, "*.*", SearchOption.AllDirectories).Length;
+            #endregion
 
             //Initialize progressbar
-            int AllProgressbarParts = 0;
-            AllProgressbarParts = AllFilesCount;
-            progressBar1.Maximum = AllProgressbarParts;
+            progressBar1.Value = 0;
+            progressBar1.Maximum = int.Parse(AllFilesCount.ToString());
 
-            //Get Files
+            #region Get all files and display them in listBox
             DirectoryInfo DI = new DirectoryInfo(textBox1.Text);
             FileInfo[] FI = DI.GetFiles("*", SearchOption.AllDirectories);
             foreach (FileInfo file in FI)
             {
                 listBox2.Items.Add(file.Name);
-                progressBar1.Value += 1;
             }
+            #endregion
 
-            //Get Files count by type
+            #region Get number of files by type
             PictureFilesCount += Directory.GetFiles(textBox1.Text, "*.png", SearchOption.AllDirectories).Length; //Image Files
             VideoFilesCount += Directory.GetFiles(textBox1.Text, "*.mp4", SearchOption.AllDirectories).Length; //Video Files
             MusicFilesCount += Directory.GetFiles(textBox1.Text, "*.mp3", SearchOption.AllDirectories).Length; //Music Files
             DocumentsFilesCount += Directory.GetFiles(textBox1.Text, "*.txt", SearchOption.AllDirectories).Length; //Document Files
+            #endregion
 
-            //Get Files size by type
+            #region Get files size by type
             DirectoryInfo PDI = new DirectoryInfo(textBox1.Text); //Pictures
             FileInfo[] PFI = PDI.GetFiles("*.png", SearchOption.AllDirectories);
             foreach (FileInfo file in PFI)
             {
-                PictureFilesSize += Convert.ToInt32(file.Length);
+                PictureFilesSize += file.Length;
+                progressBar1.Value += 1;
             }
 
             DirectoryInfo VDI = new DirectoryInfo(textBox1.Text); //Videos
             FileInfo[] VFI = VDI.GetFiles("*.mp4", SearchOption.AllDirectories);
             foreach (FileInfo file in VFI)
             {
-                VideoFilesSize += Convert.ToInt32(file.Length);
+                VideoFilesSize += file.Length;
+                progressBar1.Value += 1;
             }
 
             DirectoryInfo MDI = new DirectoryInfo(textBox1.Text); //Musics
             FileInfo[] MFI = MDI.GetFiles("*.mp3", SearchOption.AllDirectories);
             foreach (FileInfo file in MFI)
             {
-                MusicFilesSize += Convert.ToInt32(file.Length);
+                MusicFilesSize += file.Length;
+                progressBar1.Value += 1;
             }
 
             DirectoryInfo DDI = new DirectoryInfo(textBox1.Text); //Documents
@@ -114,38 +94,42 @@ namespace Advanced_file_scanner
             
             foreach (FileInfo file in DFI)
             {
-                DocumentsFilesSize += Convert.ToInt32(file.Length);
+                DocumentsFilesSize += file.Length;
+                progressBar1.Value += 1;
             }
 
             DirectoryInfo ADI = new DirectoryInfo(textBox1.Text); //All Files
             FileInfo[] AFI = ADI.GetFiles("*.*", SearchOption.AllDirectories);
             foreach (FileInfo file in AFI)
             {
-                AllFilesSize += Convert.ToInt32(file.Length);
+                AllFilesSize += file.Length;
             }
+            #endregion
 
-            //Get Other files count 
+            #region Get number of other files
             int PVMDFiles = 0;
             PVMDFiles += PictureFilesCount;
             PVMDFiles += VideoFilesCount;
             PVMDFiles += MusicFilesCount;
             PVMDFiles += DocumentsFilesCount;
             OtherFilesCount = AllFilesCount - PVMDFiles;
+            progressBar1.Value += OtherFilesCount;
+            #endregion
 
-            //Get Other files Size
-            int PVMDSizes = 0;
+            #region Get size of other files
+            long PVMDSizes = 0;
             PVMDSizes += PictureFilesSize;
             PVMDSizes += VideoFilesSize;
             PVMDSizes += MusicFilesSize;
             PVMDSizes += DocumentsFilesSize;
             OtherFilesSize = AllFilesSize - PVMDSizes;
+            #endregion
 
             //Get Informations
             DirectoryInfo IDI = new DirectoryInfo(textBox1.Text);
             DriveLetter = IDI.Root.ToString();
-            Date = DateTime.Now.ToString("M/d/yyyy");
 
-            //Update Summary
+            #region Display summary in listBox
             listBox1.Items.Clear();
             listBox1.Items.Add("All Files Count: " + AllFilesCount.ToString());
             listBox1.Items.Add("All Files Size: " + AllFilesSize.ToString());
@@ -160,8 +144,8 @@ namespace Advanced_file_scanner
             listBox1.Items.Add("Other Files Count: " + OtherFilesCount.ToString());
             listBox1.Items.Add("Other Files Size: " + OtherFilesSize.ToString());
             listBox1.Items.Add("Drive Letter: " + DriveLetter);
-            listBox1.Items.Add("Date: " + Date);
-
+            listBox1.Items.Add("Date: " + DateTime.Now.ToString("M/d/yyyy"));
+            #endregion
 
             button1.Enabled = true;
         }
@@ -180,15 +164,10 @@ namespace Advanced_file_scanner
                 {
                     textBox1.Text = FDB.SelectedPath;
                     button1.Enabled = true;
+                    listBox2.Items.Clear();
                 }
             }
         }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-                Thread.Sleep(2000);
-        }
-
         private void startScanToolStripMenuItem_Click(object sender, EventArgs e)
         {
             button1_Click(sender, e);
@@ -218,6 +197,7 @@ namespace Advanced_file_scanner
                     {
                         DataToExport.Add(item.ToString());
                     }
+
                     ExportList.Export(DataToExport, SFD.FileName);
                 }
             }

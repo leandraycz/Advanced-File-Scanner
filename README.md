@@ -1,3 +1,6 @@
+# !!UNSUPPORTED!!
+This software does not receive any security and functional updates.
+
 # Advanced File Scanner
 OpenSource utility for directory scanning.
 Advanced File Scanner is opensource computer utility.
